@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uptime-beacon"
+version = "1.0.0"
+description = "Dependency-free HTTP uptime checker with latency thresholds and JSON output."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Radwan Abdulhadi Ahmed"}]
+keywords = ["uptime", "monitoring", "http", "healthcheck", "cli"]
+
+[project.scripts]
+uptime-beacon = "uptime_beacon.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
